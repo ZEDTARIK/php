@@ -2,8 +2,14 @@
 // coding php
 
 $cp = curl_init();
+/*
 curl_setopt($cp, CURLOPT_URL, "https://jsonplaceholder.typicode.com/users");
 curl_setopt($cp, CURLOPT_RETURNTRANSFER, true);
+*/
+    curl_setopt_array($cp, [
+        CURLOPT_URL =>"https://jsonplaceholder.typicode.com/users",
+        CURLOPT_RETURNTRANSFER => true
+    ]);
 $response = curl_exec($cp);
 $response = json_decode($response, true);
 // var_dump($response);
